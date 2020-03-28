@@ -1,25 +1,42 @@
 import React from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import logo from './logo.svg';
+import Login from './components/login'
+import SignUp from './components/signup'
+import Welcome from './components/welcomeComponent'
+import './components/login.css'
 import './App.css';
 
 function App() {
-  return (
+  return (<Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <nav>
+        <div className="container">
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Link className="nav-link" to={"/sign-in"}>Login</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div className="auth-wrapper">
+        <div className="auth-inner">
+          <Switch>
+            <Route path='/' exact component={Login} />
+            <Route path="/sign-in" exact component={Login} />
+            <Route path="/sign-up" exact component={SignUp} />
+            <Route path="/welcome" exact component={Welcome}/>
+          </Switch>
+        </div>
+      </div>
+    </div></Router>
   );
 }
 
