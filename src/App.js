@@ -5,7 +5,9 @@ import logo from './logo.svg';
 import Login from './components/login'
 import SignUp from './components/signup'
 import Welcome from './components/welcomeComponent'
+import Search from './components/search'
 import './components/login.css'
+import './components/search.css'
 import './App.css';
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
             <Route path="/sign-in" exact component={Login} />
             <Route path="/sign-up" exact component={SignUp} />
             <Route path="/welcome" exact component={Welcome}/>
+            <Route path="/search" exact component={Search}/>
           </Switch>
         </div>
       </div>
