@@ -6,8 +6,10 @@ import Login from './components/login'
 import SignUp from './components/signup'
 import Welcome from './components/welcomeComponent'
 import Search from './components/search'
+import ViewResults from './components/viewResults'
 import './components/login.css'
 import './components/search.css'
+import './components/viewResults.css'
 import './App.css';
 
 function App() {
@@ -36,6 +38,7 @@ function App() {
             <Route path="/sign-up" exact component={SignUp} />
             <Route path="/welcome" exact component={Welcome}/>
             <Route path="/search" exact component={Search}/>
+            <Route path="/viewResults" exact component={ViewResults}/>
           </Switch>
         </div>
       </div>
